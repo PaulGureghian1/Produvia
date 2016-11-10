@@ -1,0 +1,80 @@
+/* Remove play button over video on mobile and tablet */
+.slide.video .background video::-webkit-media-controls-panel {
+  display:none !important;
+  -webkit-appearance: none;
+}
+.slide.video .background video::-webkit-media-controls-start-playback-button {
+  display:none !important;
+  -webkit-appearance: none;
+}
+
+/* Swap panels on last slide */
+.slides:not(.lastSlide) .panel.bottom.lastPanel,
+.slides.lastSlide .panel.bottom:not(.lastPanel) {
+  opacity:0;
+  -webkit-transform: translate3d(0,100%,0) !important;
+  transform: translate3d(0,100%,0) !important;
+}
+
+/* Other */
+.slides h2,
+.slides .h2 {
+  font-family: Gotham;
+  src: url(../assets/fonts/Gotham-Bold.otf);
+}
+
+/* Fixing mobile CSS */
+
+
+/* Custom CSS */
+h2, .h2 {
+  font-size: 29px; /* original: 35px; */
+  padding-top: 15px;
+}
+
+p {
+  font-size: 20px; /* original: 26px; */
+}
+
+/* ipad */
+@media screen and (max-width:769px) {
+  h2, .h2 {
+    font-size: 30px; /* original: 35px; */
+  }
+  p {
+    font-size: 17px; /* original: 26px; */
+  }
+}
+
+/* iphone 6+ */
+@media screen and (max-width:415px) {
+  h2, .h2 {
+    font-size: 22px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}
+
+/* iphone 6 */
+@media screen and (max-width:376px) {
+  h2, .h2 {
+    font-size: 18px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}
+
+/* iphone 5 */
+@media screen and (max-width:321px) {
+  h2, .h2 {
+    font-size: 16px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}

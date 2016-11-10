@@ -1,0 +1,57 @@
+/* Fixing Spacing for Send to Messenger iframe */
+.fb-btn.large {
+  padding-left: 0px!important;
+}
+
+/* Custom CSS */
+h2, .h2 {
+  font-size: 29px; /* original: 35px; */
+  padding-top: 15px;
+}
+
+p {
+  font-size: 18px; /* original: 26px; */
+}
+
+/* ipad */
+@media screen and (max-width:769px) {
+  h2, .h2 {
+    font-size: 30px; /* original: 35px; */
+  }
+  p {
+    font-size: 17px; /* original: 26px; */
+  }
+}
+
+/* iphone 6+ */
+@media screen and (max-width:415px) {
+  h2, .h2 {
+    font-size: 22px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}
+
+/* iphone 6 */
+@media screen and (max-width:376px) {
+  h2, .h2 {
+    font-size: 18px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}
+
+/* iphone 5 */
+@media screen and (max-width:321px) {
+  h2, .h2 {
+    font-size: 16px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+}
