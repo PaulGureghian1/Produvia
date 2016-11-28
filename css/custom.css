@@ -23,13 +23,19 @@
   src: url(../assets/fonts/Gotham-Bold.otf);
 }
 
-/* Fixing mobile CSS */
+a {
+  text-decoration:underline;
+}
 
+.our-work a {
+  text-decoration:none;
+}
 
 /* Custom CSS */
 h2, .h2 {
   font-size: 29px; /* original: 35px; */
   padding-top: 15px;
+  text-transform:none;
 }
 
 p {
