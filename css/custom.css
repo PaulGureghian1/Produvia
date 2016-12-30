@@ -42,10 +42,28 @@ p {
   font-size: 20px; /* original: 26px; */
 }
 
+/* ipad pro */
+@media screen and (max-width:1025px) {
+  h1.small, .h1.small {
+    font-size: 55px; /* original: 60px; */
+  }
+  h2.small, .h2.small {
+    font-size: 23px; /* original: 23px; */
+  }
+}
+
 /* ipad */
 @media screen and (max-width:769px) {
+  h1.small,
+  .h1.small {
+    font-size: 40px; /* original: 60px; */
+  }
   h2, .h2 {
     font-size: 30px; /* original: 35px; */
+  }
+  h2.small,
+  .h2.small {
+    font-size: 23px; /* original: 23px; */
   }
   p {
     font-size: 17px; /* original: 26px; */
@@ -54,17 +72,33 @@ p {
 
 /* iphone 6+ */
 @media screen and (max-width:415px) {
+  h1.small, .h1.small {
+    font-size: 35px; /* original: 60px; */
+  }
   h2, .h2 {
     font-size: 22px; /* original: 35px; */
     padding-top: 15px;
   }
+  h2.small, .h2.small {
+    font-size: 17px; /* original: 23px; */
+  }
+  h3.uppercase, .h3.uppercase {
+    font-size: 16px;
+  }
   p {
     font-size: 16px; /* original: 26px; */
+  }
+  .button.uppercase {
+    font-size: 15px;
   }
 }
 
 /* iphone 6 */
 @media screen and (max-width:376px) {
+  h1.small,
+  .h1.small {
+    font-size: 33px; /* original: 60px; */
+  }
   h2, .h2 {
     font-size: 18px; /* original: 35px; */
     padding-top: 15px;
@@ -72,15 +106,25 @@ p {
   p {
     font-size: 16px; /* original: 26px; */
   }
+  .button.uppercase {
+    font-size: 13px;
+  }
 }
 
 /* iphone 5 */
 @media screen and (max-width:321px) {
+  h1.small,
+  .h1.small {
+    font-size: 32px; /* original: 60px; */
+  }
   h2, .h2 {
     font-size: 16px; /* original: 35px; */
     padding-top: 15px;
   }
   p {
     font-size: 16px; /* original: 26px; */
+  }
+  .button.uppercase {
+    font-size: 11px;
   }
 }

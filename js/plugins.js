@@ -8,7 +8,7 @@
 //                   |___/             
 //
 //   Required plugins for Slides JS
-//   http://designmodo.com/slides/
+//   https://designmodo.com/slides/
 
 //cache images
 (function ($) { $.extend($, { cacheImage: function (src, options) { if (typeof src === 'object') { $.each(src, function () { $.cacheImage(String(this), options); }); return; } var image = new Image(); options = options || {}; $.each(['load', 'error', 'abort'], function () { var e = String(this); if (typeof options[e] === 'function') { $(image).bind(e, options[e]); } if (typeof options.complete === 'function') { $(image).bind(e, options.complete); } }); image.src = src; return image; } }); $.extend($.fn, { cacheImage: function (options) { return this.each(function () { $.cacheImage(this.src, options); }); } }); })(jQuery);
@@ -257,7 +257,7 @@ window.allowCloseZoom = true;
     this._translateY = viewportY - imageCenterY
     this._translateX = viewportX - imageCenterX
 
-    $(this._targetImage).css('transform', 'scale(' + this._imgScaleFactor + ')')
+    $(this._targetImage).css('transform', 'scale3d(' + this._imgScaleFactor + ',' + this._imgScaleFactor + ',1)')
     $(this._targetImageWrap).css('transform', 'translate(' + this._translateX + 'px, ' + this._translateY + 'px) translateZ(0)')
 
     this._$body.addClass('zoom-overlay-open')
