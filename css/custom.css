@@ -8,14 +8,6 @@
   -webkit-appearance: none;
 }
 
-/* Swap panels on last slide */
-.slides:not(.lastSlide) .panel.bottom.lastPanel,
-.slides.lastSlide .panel.bottom:not(.lastPanel) {
-  opacity:0;
-  -webkit-transform: translate3d(0,100%,0) !important;
-  transform: translate3d(0,100%,0) !important;
-}
-
 /* Other */
 .slides h2,
 .slides .h2 {
@@ -138,4 +130,10 @@ p {
   font-family: 'La Belle Aurore', cursive;
   font-size: 70px;
   line-height: 95%;
+}
+
+.produviaLogoColour { background-color:#243e90!important; color:#fff!important;}
+
+.slides .panel.top {
+  /*background: rgba(10,11,12,.975);*/
 }
