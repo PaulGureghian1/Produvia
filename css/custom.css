@@ -105,6 +105,9 @@ p {
 
 /* iphone 5 */
 @media screen and (max-width:321px) {
+  h1, .h1 {
+    font-size:28px; /* original: 50px; */
+  }
   h1.small,
   .h1.small {
     font-size: 32px; /* original: 60px; */
@@ -132,8 +135,66 @@ p {
   line-height: 95%;
 }
 
-.produviaLogoColour { background-color:#243e90!important; color:#fff!important;}
+.brandBlueColorWhiteText { background-color:#243e90!important; color:#fff!important;}
+.brandWhiteColorBlueText { background-color:#fff!important; color:#243e90!important;}
 
-.slides .panel.top {
-  /*background: rgba(10,11,12,.975);*/
+.page-loaded .slide.whiteNav .panel.top {
+  /*background: white;*/
+  /*color:#303030;*/
 }
+
+.page-loaded .slides.whiteSlide .panel.top {
+  /*background:red;*/
+  /*color:#303030;*/
+}
+
+.whiteSlide.fade .content {
+  /*background:red;*/
+}
+
+/*Testing Nav*/
+
+/* set color for the panel */
+.slides .panel.top {
+  background: rgba(10,11,12,.975);
+  box-shadow:0 1px 1px rgba(0,0,0,0.20);
+  color: #fff;
+}
+/* set color for a button for different colored slides */
+.slides .panel.top .button.menuButton {
+  color:#303030;
+  background:#fff;
+}
+
+.page-loaded .slides.whiteSlide .panel.top {
+  background:rgba(255,255,255,.975);
+  color:#303030;
+}
+.page-loaded .slides.whiteSlide .panel.top svg {
+  fill:#303030;
+}
+.page-loaded .slides.whiteSlide .panel.top .button.menuButton {
+  background:#303030;
+  color:#fff;
+}
+
+/* transparent for the first slide */
+.slides.firstSlide .panel.top {
+  background:transparent;
+  box-shadow:none;
+}
+
+/* swap panels on last slide */
+.slides:not(.lastSlide) .panel.bottom.customPanel,
+.slides.lastSlide .panel.bottom:not(.customPanel) {
+  opacity:0;
+  -webkit-transform: translate3d(0,100%,0) !important;
+  transform: translate3d(0,100%,0) !important;
+}
+
+/* ignore */
+.slides.scroll .menuToggle.scrollEffectToggle,
+.slides:not(.scroll) .menuToggle.slideEffectToggle { background: rgba(123, 123, 123, 0.5); padding: 11px 7px; margin: -5px 0 !important; border-radius: 5px; }
+.slides.scroll .menuToggle.scrollEffectToggle *,
+.slides:not(.scroll) .menuToggle.slideEffectToggle * { cursor: default !important; opacity:1; pointer-events:none;}
+/* ignore */
