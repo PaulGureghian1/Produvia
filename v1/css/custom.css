@@ -1,0 +1,200 @@
+/* Remove play button over video on mobile and tablet */
+.slide.video .background video::-webkit-media-controls-panel {
+  display:none !important;
+  -webkit-appearance: none;
+}
+.slide.video .background video::-webkit-media-controls-start-playback-button {
+  display:none !important;
+  -webkit-appearance: none;
+}
+
+/* Other */
+.slides h2,
+.slides .h2 {
+  font-family: Gotham;
+  src: url(../assets/fonts/Gotham-Bold.otf);
+}
+
+/*a {
+  text-decoration:underline;
+}*/
+
+.our-work a {
+  text-decoration:none;
+}
+
+/* Custom CSS */
+h2, .h2 {
+  font-size: 29px; /* original: 35px; */
+  padding-top: 15px;
+  text-transform:none;
+}
+
+p {
+  font-size: 20px; /* original: 26px; */
+}
+
+/* ipad pro */
+@media screen and (max-width:1025px) {
+  h1.small, .h1.small {
+    font-size: 55px; /* original: 60px; */
+  }
+  h2.small, .h2.small {
+    font-size: 23px; /* original: 23px; */
+  }
+}
+
+/* ipad */
+@media screen and (max-width:769px) {
+  h1.small,
+  .h1.small {
+    font-size: 40px; /* original: 60px; */
+  }
+  h2, .h2 {
+    font-size: 30px; /* original: 35px; */
+  }
+  h2.small,
+  .h2.small {
+    font-size: 23px; /* original: 23px; */
+  }
+  p {
+    font-size: 17px; /* original: 26px; */
+  }
+}
+
+/* iphone 6+ */
+@media screen and (max-width:415px) {
+  h1.small, .h1.small {
+    font-size: 35px; /* original: 60px; */
+  }
+  h2, .h2 {
+    font-size: 22px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  h2.small, .h2.small {
+    font-size: 17px; /* original: 23px; */
+  }
+  h3.uppercase, .h3.uppercase {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+  .button.uppercase {
+    font-size: 15px;
+  }
+}
+
+/* iphone 6 */
+@media screen and (max-width:376px) {
+  h1.small,
+  .h1.small {
+    font-size: 33px; /* original: 60px; */
+  }
+  h2, .h2 {
+    font-size: 18px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+  .button.uppercase {
+    font-size: 13px;
+  }
+}
+
+/* iphone 5 */
+@media screen and (max-width:321px) {
+  h1, .h1 {
+    font-size:28px; /* original: 50px; */
+  }
+  h1.small,
+  .h1.small {
+    font-size: 32px; /* original: 60px; */
+  }
+  h2, .h2 {
+    font-size: 16px; /* original: 35px; */
+    padding-top: 15px;
+  }
+  p {
+    font-size: 16px; /* original: 26px; */
+  }
+  .button.uppercase {
+    font-size: 11px;
+  }
+}
+
+.sidebar .logo {
+  font-size: 40px;
+}
+
+.custom-full-name {
+  color: white;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 70px;
+  line-height: 95%;
+}
+
+.brandBlueColorWhiteText { background-color:#243e90!important; color:#fff!important;}
+.brandWhiteColorBlueText { background-color:#fff!important; color:#243e90!important;}
+
+.page-loaded .slide.whiteNav .panel.top {
+  /*background: white;*/
+  /*color:#303030;*/
+}
+
+.page-loaded .slides.whiteSlide .panel.top {
+  /*background:red;*/
+  /*color:#303030;*/
+}
+
+.whiteSlide.fade .content {
+  /*background:red;*/
+}
+
+/*Testing Nav*/
+
+/* set color for the panel */
+.slides .panel.top {
+  background: rgba(10,11,12,.975);
+  box-shadow:0 1px 1px rgba(0,0,0,0.20);
+  color: #fff;
+}
+/* set color for a button for different colored slides */
+.slides .panel.top .button.menuButton {
+  color:#303030;
+  background:#fff;
+}
+
+.page-loaded .slides.whiteSlide .panel.top {
+  background:rgba(255,255,255,.975);
+  color:#303030;
+}
+.page-loaded .slides.whiteSlide .panel.top svg {
+  fill:#303030;
+}
+.page-loaded .slides.whiteSlide .panel.top .button.menuButton {
+  background:#303030;
+  color:#fff;
+}
+
+/* transparent for the first slide */
+.slides.firstSlide .panel.top {
+  background:transparent;
+  box-shadow:none;
+}
+
+/* swap panels on last slide */
+.slides:not(.lastSlide) .panel.bottom.customPanel,
+.slides.lastSlide .panel.bottom:not(.customPanel) {
+  opacity:0;
+  -webkit-transform: translate3d(0,100%,0) !important;
+  transform: translate3d(0,100%,0) !important;
+}
+
+/* ignore */
+.slides.scroll .menuToggle.scrollEffectToggle,
+.slides:not(.scroll) .menuToggle.slideEffectToggle { background: rgba(123, 123, 123, 0.5); padding: 11px 7px; margin: -5px 0 !important; border-radius: 5px; }
+.slides.scroll .menuToggle.scrollEffectToggle *,
+.slides:not(.scroll) .menuToggle.slideEffectToggle * { cursor: default !important; opacity:1; pointer-events:none;}
+/* ignore */
