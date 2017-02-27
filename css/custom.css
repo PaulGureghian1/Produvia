@@ -1,6 +1,32 @@
+/* all pages */
+.page-loaded .slides:not(.firstSlide) .panel.top {
+  background:rgba(255,255,255,.975);
+  border-bottom:1px solid #ebebeb;
+  color:#243e90;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.page-loaded .slides:not(.firstSlide) .panel svg {
+   fill:#243e90;
+}
+.page-loaded .slides:not(.firstSlide) .panel .menuButton {
+   background:#243e90;
+   color:#243e90;
+}
+.customHeader {
+  letter-spacing: 0.12em !important;
+  line-height: 1.16 !Important;
+}
+#menu-logo {
+  width: 35px;
+  height: 35px;
+}
+
+/* colors */
 .brandBlueColorWhiteText { background-color:#243e90!important; color:#fff!important;}
 .brandWhiteColorBlueText { background-color:#fff!important; color:#243e90!important;}
 
+/* fonts */
 .raleway {
   font-family:Raleway, sans-serif !important;
 }
@@ -14,56 +40,52 @@
   font-family:Georgia, serif !important;
 }
 
+/* index.html */
+.white.facebook, .white.instagram, .white.linkedin, .white.twitter {
+  background-color: #fff !important;
+}
+.button.white svg {
+  fill: #303030 !important;
+}
+
+/* sidebar */
+.sidebar .social li a svg {
+  width: 25px;
+  height: 25px;
+}
 .sidebar .mainMenu li a {
   font-size: 22px;
   font-weight: 700;
 }
 
-/* Last Slide (index.html) */
-.white.facebook, .white.instagram, .white.linkedin, .white.twitter {
-  background-color: #fff !important;
-}
-
-.button.white svg {
-  fill: #303030 !important;
-}
-
-.sidebar .social li a svg {
-  width: 25px;
-  height: 25px;
-}
-
-/* ipad pro */
-@media screen and (max-width:1025px) {
+/* footer */
+@media screen and (max-width:1025px) { /* ipad pro */
   .compact .center p {
-    font-size: 17px; /* original: 26px; */
+    font-size: 24px;
+  }
+}
+@media screen and (max-width:769px) { /* ipad */
+  .compact .center p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width:415px) { /* iphone 6+ */
+  .compact .center p {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width:376px) { /* iphone 6 */
+  .compact .center p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:321px) { /* iphone 5 */
+  .compact .center p {
+    font-size: 17px;
   }
 }
 
-/* ipad */
-@media screen and (max-width:769px) {
-  .compact .center p {
-    font-size: 17px; /* original: 26px; */
-  }
-}
-
-/* iphone 6+ */
-@media screen and (max-width:415px) {
-  .compact .center p {
-    font-size: 16px; /* original: 26px; */
-  }
-}
-
-/* iphone 6 */
-@media screen and (max-width:376px) {
-  .compact .center p {
-    font-size: 16px; /* original: 26px; */
-  }
-}
-
-/* iphone 5 */
-@media screen and (max-width:321px) {
-  .compact .center p {
-    font-size: 16px; /* original: 26px; */
-  }
+/* manufacturing.html */
+.slides.whiteSlide .panel .button.menuButton.stroke {
+  color: #243e90;
 }
