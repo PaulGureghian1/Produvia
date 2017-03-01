@@ -30,11 +30,11 @@ if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amp
 
 amplitude.getInstance().init("6e37ef5b6d5f144f750ddfc716518af1");
 
-// amplitude.getInstance().regenerateDeviceId();
-
 $( document ).ready(function() {
 	$( ".menu-home" ).click(function() {
 		amplitude.getInstance().logEvent('CLICKED_HOME');
-	  	console.log( "Home button clicked" );
+	});
+	$( ".menu-start-project" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_START_PROJECT');
 	});
 });
