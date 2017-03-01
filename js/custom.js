@@ -34,6 +34,6 @@ amplitude.getInstance().init("6e37ef5b6d5f144f750ddfc716518af1");
 
 $( document ).ready(function() {
 	$( ".menu-home" ).click(function() {
-	  alert( "Home button clicked" );
+	  console.log( "Home button clicked" );
 	});
 });
