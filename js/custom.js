@@ -13,3 +13,6 @@
 analytics.load("CtsIiKDoEvbyUVdYsEmtcrOVsvG7kIMY");
 analytics.page();
 }}();
+
+// Amplitude
+amplitude.getInstance().init("6e37ef5b6d5f144f750ddfc716518af1");
