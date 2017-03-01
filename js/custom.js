@@ -34,6 +34,7 @@ amplitude.getInstance().init("6e37ef5b6d5f144f750ddfc716518af1");
 
 $( document ).ready(function() {
 	$( ".menu-home" ).click(function() {
-	  console.log( "Home button clicked" );
+		amplitude.getInstance().logEvent('CLICKED_HOME');
+	  	console.log( "Home button clicked" );
 	});
 });
