@@ -32,6 +32,6 @@ amplitude.getInstance().init("6e37ef5b6d5f144f750ddfc716518af1");
 
 // amplitude.getInstance().regenerateDeviceId();
 
-$( "#menu-home" ).click(function() {
+$( ".menu-home" ).click(function() {
   console.log( "Home button clicked" );
 });
