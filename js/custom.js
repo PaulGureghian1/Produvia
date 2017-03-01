@@ -34,6 +34,18 @@ $( document ).ready(function() {
 	$( ".menu-home" ).click(function() {
 		amplitude.getInstance().logEvent('CLICKED_HOME');
 	});
+	$( ".menu-services" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_SERVICES');
+	});
+	$( ".menu-solutions" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_SOLUTIONS');
+	});
+	$( ".menu-about-us" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_ABOUT_US');
+	});
+	$( ".menu-blog" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_BLOG');
+	});
 	$( ".menu-start-project" ).click(function() {
 		amplitude.getInstance().logEvent('CLICKED_START_PROJECT');
 	});
