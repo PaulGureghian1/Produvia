@@ -46,7 +46,16 @@ $( document ).ready(function() {
 	$( ".menu-blog" ).click(function() {
 		amplitude.getInstance().logEvent('CLICKED_BLOG');
 	});
-	$( ".menu-start-project" ).click(function() {
-		amplitude.getInstance().logEvent('CLICKED_START_PROJECT');
+	$( ".menu-start-project-home" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_START_PROJECT_FROM_HOME');
+	});
+	$( ".menu-start-project-services" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_START_PROJECT_FROM_SERVICES');
+	});
+	$( ".menu-start-project-solutions" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_START_PROJECT_FROM_SOLUTIONS');
+	});
+	$( ".menu-start-project-about-us" ).click(function() {
+		amplitude.getInstance().logEvent('CLICKED_START_PROJECT_FROM_ABOUT_US');
 	});
 });
