@@ -70,8 +70,12 @@ $( document ).ready(function() {
 //ab
 // ab
 $(window).load(function() {
-	console.log($('.intercom-launcher-frame'));
+	document.querySelector('.intercom-launcher-frame').onload = function(){
+		alert('test');
+	};
 	setTimeout(function(){
+
+		console.log($('.intercom-launcher-frame'));
 		var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			console.log(iFrameDoc);
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
