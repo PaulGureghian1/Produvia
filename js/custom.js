@@ -59,49 +59,31 @@ $( document ).ready(function() {
 		analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
 	});
 
-
-
-	/*$(iFrameDoc).find('.intercom-launcher').click(function(e) {
-		alert('test');
-	});*/
-	/*var iFrameDoc = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
-	$(iFrameDoc).find('input[type=email]').val();*/
 });
-//ab
-// ab
-$(window).load(function() {
 
+$(window).load(function() {
 	var iFrameCheckIntId = setInterval(function(){
-		if($('.intercom-launcher-frame').length > 0)
-		{
+		if($('.intercom-launcher-frame').length > 0) {
 			clearInterval(iFrameCheckIntId);
 			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
-			console.log(iFrameDoc);
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 				setTimeout(function(){
 					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
-					/*$(iFrameDoc2).find('[name=intercom-channel-collector]').keyup(function() {
-						console.log($(this).val());
-					});*/
 					var intId = setInterval(function(){
 						var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
-						if(disabled == "disabled")
-						{
+						if(disabled == "disabled") {
 							var newGuid = guid();
 							var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
-							console.log(userEmail);
 							clearInterval(intId);
 							analytics.identify(newGuid, {
 							  email: userEmail,
 							});
-							//Segment Code
 						}
 					},100);
 				}, 500);
 			});
 		}
 	},100);
-
 });
 
 function guid() {
