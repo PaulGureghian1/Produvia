@@ -74,20 +74,22 @@ $(window).load(function() {
 	var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 	console.log(iFrameDoc);
 	$(iFrameDoc).find('.intercom-launcher').click(function(e) {
-			var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
-			/*$(iFrameDoc2).find('[name=intercom-channel-collector]').keyup(function() {
-				console.log($(this).val());
-			});*/
-			var intId = setInterval(function(){
-				var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
-				if(disabled == "disabled")
-				{
-					var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
-					console.log(userEmail);
-					clearInterval(intId);
-					//Segment Code
-				}
-			},100);
+			setTimeout(function(){
+				var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
+				/*$(iFrameDoc2).find('[name=intercom-channel-collector]').keyup(function() {
+					console.log($(this).val());
+				});*/
+				var intId = setInterval(function(){
+					var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
+					if(disabled == "disabled")
+					{
+						var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
+						console.log(userEmail);
+						clearInterval(intId);
+						//Segment Code
+					}
+				},100);
+			}, 500);
 	});
 });
 
