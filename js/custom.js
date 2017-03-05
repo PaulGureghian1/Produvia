@@ -60,13 +60,18 @@ $( document ).ready(function() {
 	});
 
 
-	$('.intercom-launcher-frame').load(function() {
-		alert('test');
-	});
+
 	$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 		alert('test');
 	});
 	/*var iFrameDoc = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
 	$(iFrameDoc).find('input[type=email]').val();*/
+});
+
+$(window).load(function() {
+	console.log($('.intercom-launcher-frame'));
+	$('.intercom-launcher-frame').load(function() {
+		alert('test');
+	});
 });
 
