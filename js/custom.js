@@ -60,8 +60,9 @@ $( document ).ready(function() {
 	});
 
 
-	var iFrameDoc = $('.intercom-launcher-frame');
-	console.log(iFrameDoc);
+	$('.intercom-launcher-frame').load(function() {
+		alert('test');
+	});
 	$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 		alert('test');
 	});
