@@ -83,9 +83,13 @@ $(window).load(function() {
 					var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
 					if(disabled == "disabled")
 					{
+						var newGuid = guid();
 						var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
 						console.log(userEmail);
 						clearInterval(intId);
+						analytics.identify(newGuid, {
+						  email: userEmail,
+						});
 						//Segment Code
 					}
 				},100);
@@ -93,3 +97,12 @@ $(window).load(function() {
 	});
 });
 
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
