@@ -58,7 +58,7 @@ $( document ).ready(function() {
 	$( ".menu-start-project-about-us" ).click(function() {
 		analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
 	});
-	$('input.required[type="email"]').live("keypress", function(e) {
+	$('#intercom-container .intercom-notification-channels-input input').live("keypress", function(e) {
 	    if (e.keyCode == 13) {
 	        alert("Enter pressed");
 	        return false;
