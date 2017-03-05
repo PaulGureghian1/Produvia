@@ -58,11 +58,14 @@ $( document ).ready(function() {
 	$( ".menu-start-project-about-us" ).click(function() {
 		analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
 	});
-	$('#intercom-container .intercom-notification-channels-input input').live("keypress", function(e) {
-	    if (e.keyCode == 13) {
-	        alert("Enter pressed");
-	        return false;
-	    }
+
+
+	var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
+	console.log(iFrameDoc);
+	$(iFrameDoc).find('.intercom-launcher').click(function(e) {
+		alert('test');
 	});
+	/*var iFrameDoc = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
+	$(iFrameDoc).find('input[type=email]').val();*/
 });
 
