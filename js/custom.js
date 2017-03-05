@@ -58,4 +58,7 @@ $( document ).ready(function() {
 	$( ".menu-start-project-about-us" ).click(function() {
 		analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
 	});
+	$( ".intercom-notification-channels-input-submit-button" ).click(function() {
+		alert(document.querySelector('input').value)
+	});
 });
