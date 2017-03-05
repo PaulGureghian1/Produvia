@@ -60,7 +60,7 @@ $( document ).ready(function() {
 	});
 
 
-	var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
+	var iFrameDoc = $('.intercom-launcher-frame');
 	console.log(iFrameDoc);
 	$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 		alert('test');
