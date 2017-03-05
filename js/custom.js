@@ -70,37 +70,37 @@ $( document ).ready(function() {
 //ab
 // ab
 $(window).load(function() {
-	document.querySelector('.intercom-launcher-frame').onload = function(){
-		alert('test');
-	};
-	setTimeout(function(){
 
-		console.log($('.intercom-launcher-frame'));
-		var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
+	var iFrameCheckIntId = setInterval(function(){
+		if($('.intercom-launcher-frame').length > 0)
+		{
+			clearInterval(iFrameCheckIntId);
+			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			console.log(iFrameDoc);
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
-					setTimeout(function(){
-						var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
-						/*$(iFrameDoc2).find('[name=intercom-channel-collector]').keyup(function() {
-							console.log($(this).val());
-						});*/
-						var intId = setInterval(function(){
-							var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
-							if(disabled == "disabled")
-							{
-								var newGuid = guid();
-								var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
-								console.log(userEmail);
-								clearInterval(intId);
-								analytics.identify(newGuid, {
-								  email: userEmail,
-								});
-								//Segment Code
-							}
-						},100);
-					}, 500);
-		});
-	}, 1000);
+				setTimeout(function(){
+					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
+					/*$(iFrameDoc2).find('[name=intercom-channel-collector]').keyup(function() {
+						console.log($(this).val());
+					});*/
+					var intId = setInterval(function(){
+						var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
+						if(disabled == "disabled")
+						{
+							var newGuid = guid();
+							var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
+							console.log(userEmail);
+							clearInterval(intId);
+							analytics.identify(newGuid, {
+							  email: userEmail,
+							});
+							//Segment Code
+						}
+					},100);
+				}, 500);
+			});
+		}
+	},100);
 
 });
 
