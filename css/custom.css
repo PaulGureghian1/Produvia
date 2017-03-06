@@ -2,16 +2,16 @@
 .page-loaded .slides:not(.firstSlide) .panel.top {
   background:rgba(255,255,255,.975);
   border-bottom:1px solid #ebebeb;
-  color:#243e90;
+  color:#257ec2;
   padding-top: 14px;
   padding-bottom: 14px;
 }
 .page-loaded .slides:not(.firstSlide) .panel svg {
-   fill:#243e90;
+   fill:#257ec2;
 }
 .page-loaded .slides:not(.firstSlide) .panel .menuButton {
-   background:#243e90;
-   color:#243e90;
+   background:#257ec2;
+   color:#257ec2;
 }
 .customHeader {
   letter-spacing: 0.12em !important;
@@ -23,8 +23,8 @@
 }
 
 /* colors */
-.brandBlueColorWhiteText { background-color:#243e90!important; color:#fff!important;}
-.brandWhiteColorBlueText { background-color:#fff!important; color:#243e90!important;}
+.brandBlueColorWhiteText { background-color:#257ec2!important; color:#fff!important;}
+.brandWhiteColorBlueText { background-color:#fff!important; color:#257ec2!important;}
 
 /* fonts */
 .raleway {
@@ -87,5 +87,5 @@
 
 /* manufacturing.html */
 .slides.whiteSlide .panel .button.menuButton.stroke {
-  color: #243e90;
+  color: #257ec2;
 }
