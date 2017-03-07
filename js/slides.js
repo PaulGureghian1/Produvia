@@ -1,15 +1,15 @@
 /*  
 
    _____ _       _                 _  _____ 
-  / ___/| (•)   | |               | |/ ___/  v 3.0
+  / ___/| (•)   | |               | |/ ___/  v 3.0.1
  | (___ | |_  __| | ___ ____      | | (___  
   \___ \| | |/ _` |/ _ / __/  _   | |\___ \ 
   ____) | | | (_| |  __\__ \ | |__| |____) |
  /_____/|_|_|\__,_|\___/___/  \____//_____/ 
                                             
                                             
-This script is necessary for proper work of your Slides Project.
-It requires plugins.js and jquery-2.2.4 to run this script.
+This file contains scripts required for the proper functionality and display
+of your Slides Project. It also requires plugins.js and jquery-2.2.4 to run this script properly.
 
 https://designmodo.com/slides/
 
@@ -85,18 +85,13 @@ $(document).ready(function() { "use strict";
   $body.hide().show(0);
   
   //Browsers with bug by default
-  if( window.isChromeiOS ) {
-
-    //failsafe 
-    //$body.removeClass('zen stack film cards zoom plain').addClass('scroll');
+  if (window.isChromeiOS) {
 
     var preventPullToRefresh = false;
     var lastTouchY = 0;
     var touchstartHandler = function(e) {
       if (e.touches.length != 1) return;
       lastTouchY = e.touches[0].clientY;
-      // Pull-to-refresh will only trigger if the scroll begins when the
-      // document's Y offset is zero.
       preventPullToRefresh = window.pageYOffset == 0;
     }
 
@@ -106,8 +101,6 @@ $(document).ready(function() { "use strict";
       lastTouchY = touchY;
 
       if (preventPullToRefresh) {
-        // To suppress pull-to-refresh it is sufficient to preventDefault the
-        // first overscrolling touchmove.
         preventPullToRefresh = false;
         if (touchYDelta > 0) {
           e.preventDefault();
@@ -144,6 +137,8 @@ $(document).ready(function() { "use strict";
   window.isScroll = $body.hasClass('scroll');
   window.isSimplifiedMobile = $body.hasClass('simplifiedMobile');
   if (window.isScroll || window.isSimplifiedMobile && window.isMobile) { $html.addClass('scrollable'); }
+
+
   
   //Horizonal Mode
   if ($body.hasClass('horizontal')){
@@ -164,6 +159,13 @@ $(document).ready(function() { "use strict";
       window.isAnimated = "auto";
       $body.removeClass('animateOnScroll').addClass('animated');
     }
+  }
+
+  //Remove animation for Simplified Mobile Option
+  if (window.isSimplifiedMobile && window.isMobile) {
+    window.isAnimated = false;
+    $body.removeClass('animated animateOnScroll');
+    $("[class*='ae-']").addClass('done');
   }
 
   if (!window.isAnimated) {
@@ -552,14 +554,15 @@ $(document).ready(function() { "use strict";
   $('html,body').on('DOMMouseScroll mousewheel scroll touchmove', function(event){
     var currentSection = $('.slide.selected .content'),
         scrollsize = Math.ceil(Math.abs(event.deltaY) * event.deltaFactor),
-        browserScrollRate = (window.isFirefox) ? 10 : 1,
+        browserScrollRate = (window.isFirefox) ? 2 : 1,
         OSScrollRate = (window.isWindows) ? browserScrollRate * 2 : browserScrollRate,
         wheelDelta = (event.originalEvent.wheelDelta) ? event.originalEvent.wheelDelta : event.deltaY * event.deltaFactor,
         energy = wheelDelta * browserScrollRate * OSScrollRate,
         scrollDirection = (event.deltaY >= 0) ? "up" : "down",
         curSecScrolltop = $(currentSection).scrollTop(),
         currentSectionHeight = $(currentSection).find('.container').outerHeight(),
-        deviceZoom = detectZoom.device();
+        deviceZoom = detectZoom.device(),
+        maxScrollToSlide = (window.isFirefox && window.isWindows) ? 200 : 500;
 
     //skip empty events
     if (!scrollsize) return;
@@ -631,7 +634,7 @@ $(document).ready(function() { "use strict";
         } else if (( scrollDirection === "down" ) && ( $(currentSection).scrollTop() + $(window).height() >= Math.floor(currentSectionHeight / deviceZoom) )){
           window.allowSlide = 1;
         }
-            
+
         if ((!window.sidebarShown)&&(!window.popupShown)&&(!window.blockScroll)) {
           
           if (window.smoothScroll && !window.isTouchPad){
@@ -670,7 +673,7 @@ $(document).ready(function() { "use strict";
       }
       
       //change slide on medium user scroll
-      if ((Math.abs(window.collectScrolls) >= 500) && (window.allowSlide) && (!window.sidebarShown) && (!window.popupShown) && (!window.disableOnScroll)){
+      if ((Math.abs(window.collectScrolls) >= maxScrollToSlide) && (window.allowSlide) && (!window.sidebarShown) && (!window.popupShown) && (!window.disableOnScroll)){
         
         window.collectScrolls = 0;
 
@@ -1264,7 +1267,13 @@ $(document).ready(function() { "use strict";
 
   $('.sidebarTrigger[data-sidebar-id]').on('click', function(){
     
-    var sidebarID = $(this).data('sidebar-id'),
+    var sidebarID = $(this).data('sidebar-id');
+    window.showSidebar(sidebarID);
+
+  });
+
+  window.showSidebar = function(id){
+    var sidebarID = id,
         element = $('.sidebar[data-sidebar-id="' + sidebarID + '"]'),
         isAnimated = $(element).hasClass('animated');
     
@@ -1289,7 +1298,8 @@ $(document).ready(function() { "use strict";
     
     //clean up
     hideDropdown();
-  });
+
+  }
   
   function hideSidebar(){
     
@@ -1335,9 +1345,13 @@ $(document).ready(function() { "use strict";
                   | |         |_|    
        Popup      |_|                      */
                 
-  $('.popupTrigger').on('click', function(){
-    
-    var popupID = $(this).data('popup-id'),
+  $('.popupTrigger[data-popup-id]').on('click', function(){
+    var popupID = $(this).data('popup-id');
+    window.showPopup(popupID);
+  });
+
+  window.showPopup = function(id){
+    var popupID = id,
         element = $('.popup[data-popup-id="' + popupID + '"]'),
         isAnimated = element.hasClass('animated');
     
@@ -1379,7 +1393,7 @@ $(document).ready(function() { "use strict";
     
     //clean up
     hideDropdown();
-  });
+  }
   
   function hidePopup() {
     //stop video on close
@@ -1421,19 +1435,6 @@ $(document).ready(function() { "use strict";
     }
   });
    
-  //Hide on .close Click
-  $('.popup .close, .popup [data-popup-action="close"]').on('click', function(){
-    hidePopup();
-  });
-  
-  //Hide on body click
-  $(document).on('click', function (e){
-    var container = $(".popupShown .popup .popupContent, .popupTrigger");
-    if (!container.is(e.target) && container.has(e.target).length === 0 && container.length > 0) {
-      hidePopup();
-    }
-  });
-  
   //Hide on .close Click
   $('.popup .close, .popup [data-popup-action="close"]').on('click', function(){
     hidePopup();
@@ -1674,7 +1675,7 @@ $(document).ready(function() { "use strict";
   
   
    
-  /*   _____                      _                     
+ /*   _____                      _                     
       |  __ \                    | |                    
       | |  | |_ __ ___  _ __   __| | _____      ___ __  
       | |  | | '__/ _ \| '_ \ / _` |/ _ \ \ /\ / / '_ \ 
@@ -1686,7 +1687,7 @@ $(document).ready(function() { "use strict";
        
        
   window.dropdownShown = false;
-  $('.dropdownTrigger').on('click mouseover', function(){
+  $('.dropdownTrigger').on('click', function(){
 
     //show
     var $this = $(this),
@@ -1695,16 +1696,11 @@ $(document).ready(function() { "use strict";
         offsetX = Math.ceil(offset.left),
         dropdownID = $this.data('dropdown-id'),
         $element = $('.dropdown[data-dropdown-id="' + dropdownID + '"]'),
-        showOnHover = $this.data('dropdown-hover'),
         elementPosition = $this.data('dropdown-position') ? $this.data('dropdown-position') : $element.attr('class'),
         elementPosition = elementPosition.toLowerCase();
 
     //hide
     hideDropdown();
-
-    if (!showOnHover && event.type == "mouseover") {
-      return;
-    }
     
     if ( elementPosition.indexOf("bottom") >= 0 ) {
       offsetY = offsetY - $element.outerHeight();
@@ -1908,19 +1904,19 @@ $(document).ready(function() { "use strict";
   //CONTACT FORM
   $('#contact-form, [data-ajax-form]').each(function(index, element) {
     $(element).ajaxForm(function() { 
-        var $ajaxForm = $(element),
-            $ajaxFormButton = $(element).find('[type="submit"]'),
-            successText = $ajaxFormButton.data('success-text') ? $ajaxFormButton.data('success-text') : "Done!",
-            successClass = $ajaxFormButton.data('success-class') ? $ajaxFormButton.data('success-class') : "green",
-            defaultText = $ajaxFormButton.val();
-            
-        $ajaxFormButton.attr('value',successText).addClass(successClass);
-        
-        setTimeout(function(){
-          $ajaxFormButton.attr('value',defaultText).removeClass(successClass);
-          $ajaxForm[0].reset();
-        },4000);
-      });
+      var $ajaxForm = $(element),
+          $ajaxFormButton = $(element).find('[type="submit"]'),
+          successText = $ajaxFormButton.data('success-text') ? $ajaxFormButton.data('success-text') : "Done!",
+          successClass = $ajaxFormButton.data('success-class') ? $ajaxFormButton.data('success-class') : "green",
+          defaultText = $ajaxFormButton.val();
+          
+      $ajaxFormButton.attr('value',successText).addClass(successClass);
+      
+      setTimeout(function(){
+        $ajaxFormButton.attr('value',defaultText).removeClass(successClass);
+        $ajaxForm[0].reset();
+      },4000);
+    });
   });
 
 
