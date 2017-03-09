@@ -58,6 +58,12 @@
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  h1, .h1, h1.huge, .h1.huge, h1.big, .h1.big {
+    font-size: 42px;
+  }
+}
+
 /* footer */
 @media screen and (max-width:1025px) { /* ipad pro */
   .compact .center p {

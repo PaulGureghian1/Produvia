@@ -16,33 +16,30 @@ analytics.page();
 
 // Segment - Track Top Menu Clicks
 $( document ).ready(function() {
-	$( ".menu-home" ).click(function() {
-		analytics.track("CLICKED_HOME", {});
-	});
-	$( ".menu-services" ).click(function() {
-		analytics.track("CLICKED_SERVICES", {});
-	});
-	$( ".menu-solutions" ).click(function() {
-		analytics.track("CLICKED_SOLUTIONS", {});
-	});
-	$( ".menu-about-us" ).click(function() {
-		analytics.track("CLICKED_ABOUT_US", {});
-	});
-	$( ".menu-blog" ).click(function() {
-		analytics.track("CLICKED_BLOG", {});
-	});
-	$( ".menu-start-project-home" ).click(function() {
-		analytics.track("CLICKED_START_PROJECT_FROM_HOME", {});
-	});
-	$( ".menu-start-project-services" ).click(function() {
-		analytics.track("CLICKED_START_PROJECT_FROM_SERVICES", {});
-	});
-	$( ".menu-start-project-solutions" ).click(function() {
-		analytics.track("CLICKED_START_PROJECT_FROM_SOLUTIONS", {});
-	});
-	$( ".menu-start-project-about-us" ).click(function() {
-		analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
-	});
+	// $( ".menu-home-desktop" ).click(function() {
+	// 	analytics.track("CLICKED_HOME", {});
+	// });
+	// $( ".menu-services-desktop" ).click(function() {
+	// 	analytics.track("CLICKED_SERVICES", {});
+	// });
+	// $( ".menu-about-us-desktop" ).click(function() {
+	// 	analytics.track("CLICKED_ABOUT_US", {});
+	// });
+	// $( ".menu-blog-desktop" ).click(function() {
+	// 	analytics.track("CLICKED_BLOG", {});
+	// });
+	// $( ".menu-start-project-home" ).click(function() {
+	// 	analytics.track("CLICKED_START_PROJECT_FROM_HOME", {});
+	// });
+	// $( ".menu-start-project-services" ).click(function() {
+	// 	analytics.track("CLICKED_START_PROJECT_FROM_SERVICES", {});
+	// });
+	// $( ".menu-start-project-solutions" ).click(function() {
+	// 	analytics.track("CLICKED_START_PROJECT_FROM_SOLUTIONS", {});
+	// });
+	// $( ".menu-start-project-about-us" ).click(function() {
+	// 	analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
+	// });
 });
 
 // Segment - Store User Email using Intercom
