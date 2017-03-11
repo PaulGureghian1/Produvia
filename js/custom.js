@@ -16,6 +16,8 @@ analytics.page();
 
 // Segment - Track Top Menu Clicks
 $( document ).ready(function() {
+	// TODO: Make sure these values are changed
+
 	// $( ".menu-home-desktop" ).click(function() {
 	// 	analytics.track("CLICKED_HOME", {});
 	// });
