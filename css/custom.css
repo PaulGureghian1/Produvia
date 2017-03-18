@@ -6,7 +6,7 @@
   padding-top: 14px;
   padding-bottom: 14px;
 }
-.page-loaded .slides:not(.firstSlide) .panel svg {
+.page-loaded .slides:not(.firstSlide) .panel.top svg {
    fill:#257ec2;
 }
 .page-loaded .slides:not(.firstSlide) .panel .menuButton {
