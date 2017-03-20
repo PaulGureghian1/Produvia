@@ -16,32 +16,39 @@ analytics.page();
 
 // Segment - Track Top Menu Clicks
 $( document ).ready(function() {
-	// TODO: Make sure these values are changed
-
-	// $( ".menu-home-desktop" ).click(function() {
-	// 	analytics.track("CLICKED_HOME", {});
-	// });
-	// $( ".menu-services-desktop" ).click(function() {
-	// 	analytics.track("CLICKED_SERVICES", {});
-	// });
-	// $( ".menu-about-us-desktop" ).click(function() {
-	// 	analytics.track("CLICKED_ABOUT_US", {});
-	// });
-	// $( ".menu-blog-desktop" ).click(function() {
-	// 	analytics.track("CLICKED_BLOG", {});
-	// });
-	// $( ".menu-start-project-home" ).click(function() {
-	// 	analytics.track("CLICKED_START_PROJECT_FROM_HOME", {});
-	// });
-	// $( ".menu-start-project-services" ).click(function() {
-	// 	analytics.track("CLICKED_START_PROJECT_FROM_SERVICES", {});
-	// });
-	// $( ".menu-start-project-solutions" ).click(function() {
-	// 	analytics.track("CLICKED_START_PROJECT_FROM_SOLUTIONS", {});
-	// });
-	// $( ".menu-start-project-about-us" ).click(function() {
-	// 	analytics.track("CLICKED_START_PROJECT_FROM_ABOUT_US", {});
-	// });
+	$( ".clicked-home" ).click(function() {
+		analytics.track("CLICKED_HOME", {});
+	});
+	$( ".clicked-services" ).click(function() {
+		analytics.track("CLICKED_SERVICES", {});
+	});
+	$( ".clicked-portfolio" ).click(function() {
+		analytics.track("CLICKED_PORTFOLIO", {});
+	});
+	$( ".clicked-about-us" ).click(function() {
+		analytics.track("CLICKED_ABOUT_US", {});
+	});
+	$( ".clicked-blog" ).click(function() {
+		analytics.track("CLICKED_BLOG", {});
+	});
+	$( ".clicked-chat" ).click(function() {
+		analytics.track("CLICKED_CHAT", {});
+	});
+	$( ".clicked-chat-from-index" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_INDEX", {});
+	});
+	$( ".clicked-chat-from-services" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_SERVICES", {});
+	});
+	$( ".clicked-chat-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
+	});
+	$( ".clicked-chat-from-about-us" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
+	});
+	$( ".clicked-chat-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
+	});
 });
 
 // Segment - Store User Email using Intercom
