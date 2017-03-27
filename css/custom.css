@@ -1,3 +1,7 @@
+.ultraBold {
+  font-weight: 900;
+}
+
 /* all pages */
 .page-loaded .slides:not(.firstSlide) .panel.top {
   background:rgba(255,255,255,.975);
