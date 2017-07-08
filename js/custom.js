@@ -22,6 +22,9 @@ $( document ).ready(function() {
 	$( ".clicked-services" ).click(function() {
 		analytics.track("CLICKED_SERVICES", {});
 	});
+	$( ".clicked-portfolio" ).click(function() {
+		analytics.track("CLICKED_PORTFOLIO", {});
+	});
 	$( ".clicked-about-us" ).click(function() {
 		analytics.track("CLICKED_ABOUT_US", {});
 	});
@@ -37,8 +40,14 @@ $( document ).ready(function() {
 	$( ".clicked-chat-from-services" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_SERVICES", {});
 	});
+	$( ".clicked-chat-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
+	});
 	$( ".clicked-chat-from-about-us" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
+	});
+	$( ".clicked-chat-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
 	});
 });
 
