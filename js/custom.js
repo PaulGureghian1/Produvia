@@ -46,9 +46,6 @@ $( document ).ready(function() {
 	$( ".clicked-chat-from-about-us" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
 	});
-	$( ".clicked-chat-from-portfolio" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
-	});
 });
 
 // Segment - Store User Email using Intercom
