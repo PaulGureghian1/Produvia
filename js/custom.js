@@ -34,6 +34,9 @@ $( document ).ready(function() {
 	$( ".clicked-blog" ).click(function() {
 		analytics.track("CLICKED_BLOG", {});
 	});
+	$( ".clicked-playbook-from-about-us" ).click(function() {
+		analytics.track("CLICKED_PLAYBOOK_FROM_ABOUT_US", {});
+	});
 	$( ".clicked-chat-from-index" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_INDEX", {});
 	});
