@@ -59,7 +59,7 @@ $( document ).ready(function() {
 
 // Segment - Track Clicks on Intercom Button
 $(window).load(function() {
-	var iFrameCheckIntId = setInterval(function(){
+	setInterval(function(){
 		if($('.intercom-launcher-frame').length > 0) {
 			$( ".intercom-launcher" ).click(function() {
 				analytics.track("CLICKED_CHAT", {});
