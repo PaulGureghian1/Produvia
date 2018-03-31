@@ -14,7 +14,7 @@ analytics.load("CtsIiKDoEvbyUVdYsEmtcrOVsvG7kIMY");
 analytics.page();
 }}();
 
-// Segment - Track Top Menu Clicks
+// Segment - Track Clicks
 $( document ).ready(function() {
 	$( ".clicked-home" ).click(function() {
 		analytics.track("CLICKED_HOME", {});
@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	$( ".clicked-blog" ).click(function() {
 		analytics.track("CLICKED_BLOG", {});
 	});
-	$( ".clicked-chat" ).click(function() {
+	$( ".intercom-launcher" ).click(function() {
 		analytics.track("CLICKED_CHAT", {});
 	});
 	$( ".clicked-chat-from-index" ).click(function() {
@@ -45,6 +45,15 @@ $( document ).ready(function() {
 	});
 	$( ".clicked-chat-from-portfolio" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
+	});
+	$( ".clicked-chat-from-products" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PRODUCTS", {});
+	});
+	$( ".clicked-chat-from-products-about-kryptos" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PRODUCTS_ABOUT_KRYPTOS", {});
+	});
+	$( ".clicked-chat-from-products-about-mapo" ).click(function() {
+		analytics.track("CLICKED_CHAT_FROM_PRODUCTS_ABOUT_MAPO", {});
 	});
 	$( ".clicked-chat-from-about-us" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
