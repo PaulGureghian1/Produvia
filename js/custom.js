@@ -16,6 +16,7 @@ analytics.page();
 
 // Segment - Track Clicks
 $( document ).ready(function() {
+	// Track Menu Clicks
 	$( ".clicked-home" ).click(function() {
 		analytics.track("CLICKED_HOME", {});
 	});
@@ -34,9 +35,11 @@ $( document ).ready(function() {
 	$( ".clicked-blog" ).click(function() {
 		analytics.track("CLICKED_BLOG", {});
 	});
+	// Track Page Links
 	$( ".clicked-playbook-from-about-us" ).click(function() {
 		analytics.track("CLICKED_PLAYBOOK_FROM_ABOUT_US", {});
 	});
+	// Track Intercom Clicks
 	$( ".clicked-talent-pool" ).click(function() {
 		analytics.track("CLICKED_TALENT_POOL", {});
 	});
@@ -60,6 +63,16 @@ $( document ).ready(function() {
 	});
 	$( ".clicked-chat-from-about-us" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
+	});
+	// Track Social Media Clicks
+	$( ".clicked-linkedin" ).click(function() {
+		analytics.track("CLICKED_LINKEDIN", {});
+	});
+	$( ".clicked-twitter" ).click(function() {
+		analytics.track("CLICKED_TWITTER", {});
+	});
+	$( ".clicked-instagram" ).click(function() {
+		analytics.track("CLICKED_INSTAGRAM", {});
 	});
 });
 
