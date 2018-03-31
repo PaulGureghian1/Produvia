@@ -73,6 +73,7 @@ $(window).load(function() {
 	var iFrameCheckIntId = setInterval(function(){
 		if($('.intercom-launcher-frame').length > 0) {
 			clearInterval(iFrameCheckIntId);
+			debugger;
 			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 				analytics.track("CLICKED_CHAT", {}); // Track Clicks on Intercom Button
