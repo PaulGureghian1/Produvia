@@ -72,13 +72,10 @@ $( document ).ready(function() {
 $(window).load(function() {
 	var iFrameCheckIntId = setInterval(function(){
 		if($('.intercom-launcher-frame').length > 0) {
-			// Track Clicks on Intercom Button
-			$( ".intercom-launcher" ).click(function() {
-				analytics.track("CLICKED_CHAT", {});
-			});
 			clearInterval(iFrameCheckIntId);
 			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
+				analytics.track("CLICKED_CHAT", {}); // Track Clicks on Intercom Button
 				setTimeout(function(){
 					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
 					var intId = setInterval(function(){
