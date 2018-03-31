@@ -99,3 +99,7 @@
 .slides.whiteSlide .panel .button.menuButton.stroke {
   color: #257ec2;
 }
+
+#smallerTwitterIcon {
+  padding: 15px;
+}

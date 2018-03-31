@@ -74,6 +74,9 @@ $( document ).ready(function() {
 	$( ".clicked-instagram" ).click(function() {
 		analytics.track("CLICKED_INSTAGRAM", {});
 	});
+	$( ".clicked-twitter-kryptos" ).click(function() {
+		analytics.track("CLICKED_TWITTER_KRYPTOS", {});
+	});
 });
 
 // Segment - Store User Email using Intercom
