@@ -34,9 +34,9 @@ $( document ).ready(function() {
 	$( ".clicked-blog" ).click(function() {
 		analytics.track("CLICKED_BLOG", {});
 	});
-	$( ".intercom-launcher" ).click(function() {
-		analytics.track("CLICKED_CHAT", {});
-	});
+	// $( ".intercom-launcher" ).click(function() {
+	// 	analytics.track("CLICKED_CHAT", {});
+	// });
 	$( ".clicked-chat-from-index" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_INDEX", {});
 	});
@@ -58,6 +58,42 @@ $( document ).ready(function() {
 	$( ".clicked-chat-from-about-us" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
 	});
+});
+
+// Segment - Track Clicks on Intercom Button
+$(window).load(function() {
+	var iFrameCheckIntId = setInterval(function(){
+		console.log("1");
+		if($('.intercom-launcher-frame').length > 0) {
+			console.log("2");
+			clearInterval(iFrameCheckIntId);
+			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
+			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
+				console.log("3");
+				analytics.track("CLICKED_CHAT", {});
+				setTimeout(function(){
+					console.log("4");
+					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
+					var intId = setInterval(function(){
+						console.log("5");
+						var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
+						if(disabled == "disabled") {
+							console.log("6");
+							// $( ".intercom-launcher" ).click(function() {
+							// 	analytics.track("CLICKED_CHAT", {});
+							// });
+							var newGuid = guid();
+							var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
+							clearInterval(intId);
+							analytics.identify(newGuid, {
+							  email: userEmail,
+							});
+						}
+					},100);
+				}, 500);
+			});
+		}
+	},100);
 });
 
 // Segment - Store User Email using Intercom
