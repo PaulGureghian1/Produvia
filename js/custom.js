@@ -57,23 +57,11 @@ $( document ).ready(function() {
 	});
 });
 
-// Segment - Track Clicks on Intercom Button
-// $(window).load(function() {
-// 	setInterval(function(){
-// 		if($('.intercom-launcher-frame').length > 0) {
-// 			$( ".intercom-launcher" ).click(function() {
-// 				analytics.track("CLICKED_CHAT", {});
-// 			});
-// 		}
-// 	},100);
-// });
-
 // Segment - Store User Email using Intercom
 $(window).load(function() {
 	var iFrameCheckIntId = setInterval(function(){
 		if($('.intercom-launcher-frame').length > 0) {
 			clearInterval(iFrameCheckIntId);
-			// debugger;
 			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
 				setTimeout(function(){
