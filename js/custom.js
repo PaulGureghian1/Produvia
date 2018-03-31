@@ -76,8 +76,8 @@ $(window).load(function() {
 			debugger;
 			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
 			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
-				analytics.track("CLICKED_CHAT", {}); // Track Clicks on Intercom Button
 				setTimeout(function(){
+				analytics.track("CLICKED_CHAT", {}); // Track Clicks on Intercom Button
 					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
 					var intId = setInterval(function(){
 						var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
