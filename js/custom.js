@@ -25,6 +25,9 @@ $( document ).ready(function() {
 	$( ".clicked-portfolio" ).click(function() {
 		analytics.track("CLICKED_PORTFOLIO", {});
 	});
+	$( ".clicked-products" ).click(function() {
+		analytics.track("CLICKED_PRODUCTS", {});
+	});
 	$( ".clicked-about-us" ).click(function() {
 		analytics.track("CLICKED_ABOUT_US", {});
 	});
