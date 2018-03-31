@@ -37,6 +37,9 @@ $( document ).ready(function() {
 	$( ".clicked-playbook-from-about-us" ).click(function() {
 		analytics.track("CLICKED_PLAYBOOK_FROM_ABOUT_US", {});
 	});
+	$( ".clicked-talent-pool" ).click(function() {
+		analytics.track("CLICKED_TALENT_POOL", {});
+	});
 	$( ".clicked-chat-from-index" ).click(function() {
 		analytics.track("CLICKED_CHAT_FROM_INDEX", {});
 	});
