@@ -16,9 +16,8 @@ analytics.page();
 
 // Segment - Track Clicks
 $( document ).ready(function() {
-	// Track Menu Clicks
-	$( ".clicked-home" ).click(function() {
-		analytics.track("CLICKED_HOME", {});
+	$( ".clicked-index" ).click(function() {
+		analytics.track("CLICKED_INDEX", {});
 	});
 	$( ".clicked-services" ).click(function() {
 		analytics.track("CLICKED_SERVICES", {});
@@ -35,34 +34,26 @@ $( document ).ready(function() {
 	$( ".clicked-blog" ).click(function() {
 		analytics.track("CLICKED_BLOG", {});
 	});
-	// Track Page Links
-	$( ".clicked-playbook-from-about-us" ).click(function() {
-		analytics.track("CLICKED_PLAYBOOK_FROM_ABOUT_US", {});
-	});
-	// Track Intercom Clicks
 	$( ".clicked-talent-pool" ).click(function() {
 		analytics.track("CLICKED_TALENT_POOL", {});
 	});
-	$( ".clicked-chat-from-index" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_INDEX", {});
+	$( ".clicked-playbook-from-about-us" ).click(function() {
+		analytics.track("CLICKED_PLAYBOOK_FROM_ABOUT_US", {});
 	});
-	$( ".clicked-chat-from-services" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_SERVICES", {});
+	$( ".clicked-contact-us-from-index" ).click(function() {
+		analytics.track("CLICKED_CONTACT_US_FROM_INDEX", {});
 	});
-	$( ".clicked-chat-from-portfolio" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_PORTFOLIO", {});
+	$( ".clicked-contact-us-from-services" ).click(function() {
+		analytics.track("CLICKED_CONTACT_US_FROM_SERVICES", {});
 	});
-	$( ".clicked-chat-from-products" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_PRODUCTS", {});
+	$( ".clicked-contact-us-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_CONTACT_US_FROM_PORTFOLIO", {});
 	});
-	$( ".clicked-chat-from-products-about-kryptos" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_PRODUCTS_ABOUT_KRYPTOS", {});
+	$( ".clicked-contact-us-from-products" ).click(function() {
+		analytics.track("CLICKED_CONTACT_US_FROM_PRODUCTS", {});
 	});
-	$( ".clicked-chat-from-products-about-mapo" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_PRODUCTS_ABOUT_MAPO", {});
-	});
-	$( ".clicked-chat-from-about-us" ).click(function() {
-		analytics.track("CLICKED_CHAT_FROM_ABOUT_US", {});
+	$( ".clicked-contact-us-from-about-us" ).click(function() {
+		analytics.track("CLICKED_CONTACT_US_FROM_ABOUT_US", {});
 	});
 	// Track Social Media Clicks
 	$( ".clicked-linkedin" ).click(function() {
@@ -80,33 +71,6 @@ $( document ).ready(function() {
 	$( ".clicked-twitter-mapo" ).click(function() {
 		analytics.track("CLICKED_TWITTER_MAPO", {});
 	});
-});
-
-// Segment - Store User Email using Intercom
-$(window).load(function() {
-	var iFrameCheckIntId = setInterval(function(){
-		if($('.intercom-launcher-frame').length > 0) {
-			clearInterval(iFrameCheckIntId);
-			var iFrameDoc = $('.intercom-launcher-frame')[0].contentDocument;
-			$(iFrameDoc).find('.intercom-launcher').click(function(e) {
-				setTimeout(function(){
-				analytics.track("CLICKED_CHAT", {}); // Track Clicks on Intercom Button
-					var iFrameDoc2 = $('#intercom-container .intercom-messenger-frame').find('iframe')[0].contentDocument;
-					var intId = setInterval(function(){
-						var disabled = $(iFrameDoc2).find('[name=intercom-channel-collector]').attr('disabled');
-						if(disabled == "disabled") {
-							var newGuid = guid();
-							var userEmail = $(iFrameDoc2).find('[name=intercom-channel-collector]').val();
-							clearInterval(intId);
-							analytics.identify(newGuid, {
-							  email: userEmail,
-							});
-						}
-					},100);
-				}, 500);
-			});
-		}
-	},100);
 });
 
 // Segment - Generate GUID
