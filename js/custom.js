@@ -83,3 +83,11 @@ function guid() {
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
     s4() + '-' + s4() + s4() + s4();
 }
+
+/* MailChimp Subscription Alert */
+/* http://designmodo.com/slides-mailchimp-jquery/ */
+$(function(){
+  $('#subscribe-predicting-mineral-deposits').ajaxChimp({
+    url: 'https://produvia.us7.list-manage.com/subscribe/post?u=9dc7369eb3ba4f36408e9fd1a&amp;id=78c6ee84f1'
+  });
+});

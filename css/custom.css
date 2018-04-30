@@ -103,3 +103,35 @@
 #smallerTwitterIcon {
   padding: 15px;
 }
+
+/* MailChimp Subscription Alert */
+/* http://designmodo.com/slides-mailchimp-jquery/ */
+.subscribe-message {
+  display: block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  max-width:500px;
+  margin:0 auto;
+  border-radius:4px;
+
+  /* animation */
+  -webkit-transform:scale(0);
+  transform:scale(0);
+  opacity:0;
+  max-height:0;
+  padding:0;
+  border-width:0;
+
+  -webkit-transition:0.5s;
+  transition:0.5s;
+}
+.subscribe-message a { font-weight:600; }
+.subscribe-message.valid,
+.subscribe-message.error {
+  -webkit-transform:scale(1);
+  transform:scale(1);
+  max-height:132px;
+  opacity:1;
+  padding:14px 20px;
+  border:2px solid;
+}
