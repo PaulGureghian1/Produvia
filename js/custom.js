@@ -49,6 +49,9 @@ $( document ).ready(function() {
 	$( ".clicked-contact-us-from-portfolio" ).click(function() {
 		analytics.track("CLICKED_CONTACT_US_FROM_PORTFOLIO", {});
 	});
+	$( ".clicked-lostbot-from-portfolio" ).click(function() {
+		analytics.track("CLICKED_LOSTBOT_FROM_PORTFOLIO", {});
+	});
 	$( ".clicked-contact-us-from-products" ).click(function() {
 		analytics.track("CLICKED_CONTACT_US_FROM_PRODUCTS", {});
 	});
