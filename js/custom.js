@@ -128,4 +128,5 @@ function() {
 	      el.addEventListener('click', handleClick);
 	    });
 	  });
-};
+	});
+}();
