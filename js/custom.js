@@ -86,7 +86,7 @@ function guid() {
 
 // Drift Open Chat
 // https://devdocs.drift.com/v1.1/docs/start-chat-with-any-link-or-button
-function() {
+(function() {
 /* Add this class to any elements you want to use to open Drift.
  *
  * Examples:
@@ -129,4 +129,4 @@ function() {
 	    });
 	  });
 	});
-}();
+})();
